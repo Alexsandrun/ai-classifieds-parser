@@ -12,3 +12,6 @@ logs/
 .coverage
 htmlcov/
 ms-playwright/
+
+# Project data (local)
+data/

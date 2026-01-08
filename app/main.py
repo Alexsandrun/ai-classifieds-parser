@@ -1,11 +1,10 @@
 # File: app/main.py
-# Version: v0.1.0
+# Version: v0.1.1
+# Changes: integrate whitelist/blacklist matching into decide()
 # Purpose: smoke pipeline (raw -> canon -> identity -> decision)
 
 from __future__ import annotations
 
-import hashlib
-import re
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
@@ -23,8 +22,10 @@ from app.core.contracts import (
     Meta,
     guard_iface,
 )
-
-TENANT_SALT = "dev-tenant-salt-change-me"
+from app.core.crypto import phone_hash_e164
+from app.core.normalize import normalize_name, normalize_phone_e164
+from app.services.lists.blacklist_store import BlacklistStore
+from app.services.lists.whitelist_store import WhitelistStore
 
 IFACE_INGEST_RAW_ID = "IFACE-INGEST-RAW-001"
 IFACE_INGEST_RAW_VER = "v0.1.0"
@@ -39,22 +40,6 @@ IFACE_DECISION_ID = "IFACE-DECISION-001"
 IFACE_DECISION_VER = "v0.1.0"
 
 
-def _sha256_hex(s: str) -> str:
-    return hashlib.sha256(s.encode("utf-8")).hexdigest()
-
-
-def normalize_phone_e164(phone_raw: Optional[str]) -> Optional[str]:
-    if not phone_raw:
-        return None
-    digits = re.sub(r"\D+", "", phone_raw)
-    if not digits:
-        return None
-    digits = digits.lstrip("0")
-    if len(digits) < 9:
-        return None
-    return "+" + digits
-
-
 def canonize(raw_pkt: ListingRawPacket) -> ListingCanonicalPacket:
     guard_iface(raw_pkt.meta, IFACE_INGEST_RAW_ID, IFACE_INGEST_RAW_VER, mode="STRICT")
 
@@ -62,7 +47,7 @@ def canonize(raw_pkt: ListingRawPacket) -> ListingCanonicalPacket:
     listing_uid = f"{r.source}:{r.source_listing_id}"
 
     phone_e164 = normalize_phone_e164(r.phone_raw)
-    phone_hash = _sha256_hex(TENANT_SALT + ":" + phone_e164) if phone_e164 else None
+    phone_hash = phone_hash_e164(phone_e164)
 
     pub_utc: Optional[datetime] = None
     if r.published_at:
@@ -80,7 +65,7 @@ def canonize(raw_pkt: ListingRawPacket) -> ListingCanonicalPacket:
         currency=r.currency,
         phone_e164=phone_e164,
         phone_hash=phone_hash,
-        contact_name_norm=(r.contact_name or "").strip().lower() or None,
+        contact_name_norm=normalize_name(r.contact_name),
     )
 
     meta = Meta.now(
@@ -114,13 +99,58 @@ def identity_cluster(canon_pkt: ListingCanonicalPacket) -> IdentityResultPacket:
     return IdentityResultPacket(meta=meta, data=IdentityResult(cluster_id=cluster_id, confidence=confidence, signals=signals))
 
 
-def decide(canon_pkt: ListingCanonicalPacket, ident_pkt: IdentityResultPacket) -> DecisionPacket:
+def decide(
+    canon_pkt: ListingCanonicalPacket,
+    ident_pkt: IdentityResultPacket,
+    *,
+    blacklist: Optional[BlacklistStore] = None,
+    whitelist: Optional[WhitelistStore] = None,
+) -> DecisionPacket:
     guard_iface(canon_pkt.meta, IFACE_PROCESS_CANON_ID, IFACE_PROCESS_CANON_VER, mode="STRICT")
     guard_iface(ident_pkt.meta, IFACE_IDENTITY_ID, IFACE_IDENTITY_VER, mode="STRICT")
 
-    risk = 0.05
-    reasons = ["BASELINE_OK"]
+    listing: ListingCanonical = canon_pkt.data
+    reasons = []
     evidence = []
+
+    # 1) Whitelist wins (internal agents)
+    if whitelist:
+        w = whitelist.match_listing(listing)
+        if w.matched:
+            reasons.extend(w.reasons)
+            evidence.extend(w.evidence)
+            meta = Meta.now(
+                iface_id=IFACE_DECISION_ID,
+                iface_version=IFACE_DECISION_VER,
+                trace_id=canon_pkt.meta.trace_id,
+                producer="decision_engine",
+            )
+            return DecisionPacket(
+                meta=meta,
+                data=Decision(action=DecisionAction.ALLOW, risk_score=0.0, reasons=reasons, evidence=evidence),
+            )
+
+    # 2) Blacklist blocks
+    if blacklist:
+        b = blacklist.match_listing(listing)
+        if b.matched:
+            reasons.extend(b.reasons)
+            evidence.extend(b.evidence)
+            meta = Meta.now(
+                iface_id=IFACE_DECISION_ID,
+                iface_version=IFACE_DECISION_VER,
+                trace_id=canon_pkt.meta.trace_id,
+                producer="decision_engine",
+            )
+            return DecisionPacket(
+                meta=meta,
+                data=Decision(action=DecisionAction.BLOCK, risk_score=1.0, reasons=reasons, evidence=evidence),
+            )
+
+    # 3) Baseline fallback (MVP)
+    risk = 0.05
+    reasons.append("BASELINE_OK")
+
     if ident_pkt.data.cluster_id and ident_pkt.data.confidence >= 0.9:
         evidence.append(f"cluster_id={ident_pkt.data.cluster_id} conf={ident_pkt.data.confidence}")
 
@@ -130,14 +160,15 @@ def decide(canon_pkt: ListingCanonicalPacket, ident_pkt: IdentityResultPacket) -
         trace_id=canon_pkt.meta.trace_id,
         producer="decision_engine",
     )
-    return DecisionPacket(
-        meta=meta,
-        data=Decision(action=DecisionAction.ALLOW, risk_score=risk, reasons=reasons, evidence=evidence),
-    )
+    return DecisionPacket(meta=meta, data=Decision(action=DecisionAction.ALLOW, risk_score=risk, reasons=reasons, evidence=evidence))
 
 
 def demo() -> DecisionPacket:
     trace_id = str(uuid.uuid4())
+
+    # Demo stores (empty by default)
+    blacklist = BlacklistStore()
+    whitelist = WhitelistStore()
 
     raw = ListingRaw(
         source="manual",
@@ -165,8 +196,10 @@ def demo() -> DecisionPacket:
 
     canon_pkt = canonize(raw_pkt)
     ident_pkt = identity_cluster(canon_pkt)
-    return decide(canon_pkt, ident_pkt)
+    return decide(canon_pkt, ident_pkt, blacklist=blacklist, whitelist=whitelist)
 
 
 if __name__ == "__main__":
     print(demo().model_dump())
+
+# END_OF_FILE

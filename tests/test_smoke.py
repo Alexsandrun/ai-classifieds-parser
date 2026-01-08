@@ -1,6 +1,6 @@
 # File: tests/test_smoke.py
-# Version: v0.1.0
-# Purpose: smoke test for demo pipeline
+# Version: v0.1.1
+# Purpose: smoke test for demo pipeline (DecisionPacket meta)
 
 from app.main import demo, IFACE_DECISION_ID, IFACE_DECISION_VER
 
