@@ -1,0 +1,27 @@
+=== DATE ===
+Fri Jan  9 04:09:10 EET 2026
+
+=== GIT STATUS ===
+## main...origin/main
+?? docs/_CHECKPOINT_STATUS.txt
+?? docs/_FILES_CURRENT.txt
+
+=== GIT LOG (last 30) ===
+341dcdf Add Decision Engine v0.1 (hard list match + soft text heuristics + explainability)
+988934c Add Decision Engine v0.1 (hard list match + soft text heuristics + explainability)
+b6b0a69 Add runtime endpoint (deployment mode + config path)
+c2c6d07 Harden .gitignore for local secrets and python caches
+e89879a Add default runtime config (single_tenant) for dev
+2755418 Add deployment mode + lists provider switch scaffold (single_tenant vs vendor_feed)
+9e52011 Harden admin settings: allowlist keys, strict validation, admin-only updates, audit log
+1799cb7 Add Admin API MVP (FastAPI): help registry + settings endpoints with validation
+5aefac9 Add tenant_settings + defaults; make leads queue use DB settings with overflow guard and claim timeout
+37ecef9 Add backup monitor jobs/runs + anti-spam alerts + Telegram notifier
+0c6994f Add leads_queue with TTL, claim/ack, and janitor cleanup
+ba461d4 Add retention manager (localfs + clickhouse partitions) with disk pressure modes
+be18378 Add infra stack (Postgres+ClickHouse+MinIO) and event writers
+6bd6bc3 Add docs (interfaces/templates/rules)
+2423964 Add blacklist/whitelist stores + CSV import + decision integration
+53786e9 Bootstrap contracts + smoke pipeline + tooling
+f0ffd62 Make app a package; configure pytest pythonpath
+a9aa1b5 first commit
