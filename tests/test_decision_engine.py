@@ -1,7 +1,3 @@
-# File: tests/test_decision_engine.py
-# Version: v0.1.0
-# Purpose: Decision Engine v0.1 tests
-
 from __future__ import annotations
 
 from app.services.decision.engine import (

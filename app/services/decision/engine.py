@@ -1,7 +1,3 @@
-# File: app/services/decision/engine.py
-# Version: v0.1.0
-# Purpose: Decision Engine v0.1 (hard match + soft text heuristics + explainability)
-
 from __future__ import annotations
 
 import re
@@ -11,12 +7,8 @@ from typing import Any, Dict, Optional
 from app.services.decision.lists_facade import ListsFacade
 from app.services.decision.models import DecisionResult
 
-
-# ----------------------------
-# Reason codes (canonical v0.1)
-# ----------------------------
 RC_BLACKLIST_PHONE = "BLACKLIST_PHONE_MATCH"
-RC_WHITELIST_OWN = "WHITELIST_OWN_PHONE"          # own employees/own agents => skip lead
+RC_WHITELIST_OWN = "WHITELIST_OWN_PHONE"
 RC_AGENT_TEXT = "AGENT_TEXT_PATTERN"
 RC_FRAUD_TEXT = "FRAUD_TEXT_PATTERN"
 
@@ -29,11 +21,7 @@ def _norm_text(s: str) -> str:
 
 @dataclass(frozen=True)
 class DecisionConfig:
-    """
-    v0.1: small, fast and explainable.
-    Later will be driven by tenant settings.
-    """
-    soft_block_threshold: float = 0.70  # score >= threshold => DROP
+    soft_block_threshold: float = 0.70
     agent_text_weight: float = 0.75
     fraud_text_weight: float = 0.90
 
@@ -43,15 +31,11 @@ AGENT_PATTERNS = [
     r"\bриелтор\b",
     r"\bкомисси(я|онные)\b",
     r"\bпосредник\b",
-    r"\bуслуги\b.*\bриелтор",
-    r"\bбез\s*посредников\b",  # often used by agents too; keep as weak signal later (v0.1 treat as signal)
-    r"\bагентам?\s*не\s*беспокоить\b",  # can be owner, but many agents write it too; keep weak signal later
 ]
 
 FRAUD_PATTERNS = [
     r"\bпредоплат[аы]\b",
     r"\bзадаток\b",
-    r"\bскидк[аи]\b.*\bтолько\s*сегодня\b",
     r"\bперевод\b.*\bна\s*карт",
 ]
 
@@ -69,17 +53,10 @@ class DecisionEngine:
         self.cfg = cfg or DecisionConfig()
 
     def decide(self, listing: Dict[str, Any]) -> DecisionResult:
-        """
-        listing (dict) expected keys (best effort):
-          - phone_e164: str | None
-          - text: str | None   (title+description combined ideally)
-        """
         phone = (listing.get("phone_e164") or "").strip()
         text = _norm_text(str(listing.get("text") or ""))
 
-        evidence: Dict[str, Any] = {}
-
-        # 1) Own whitelist => skip (DROP)
+        # 1) Whitelist own -> drop (не лид)
         if phone and self.lists.is_whitelisted_phone(phone):
             return DecisionResult(
                 action="DROP",
@@ -87,10 +64,9 @@ class DecisionEngine:
                 reason_codes=[RC_WHITELIST_OWN],
                 evidence={"phone_e164": phone},
                 hard_block=True,
-                soft_block=False,
             )
 
-        # 2) Blacklist hard match => DROP
+        # 2) Blacklist -> drop (жёстко)
         if phone and self.lists.is_blacklisted_phone(phone):
             return DecisionResult(
                 action="DROP",
@@ -98,12 +74,12 @@ class DecisionEngine:
                 reason_codes=[RC_BLACKLIST_PHONE],
                 evidence={"phone_e164": phone},
                 hard_block=True,
-                soft_block=False,
             )
 
-        # 3) Soft heuristics (text patterns)
+        # 3) Soft text signals
         score = 0.0
         reason_codes: list[str] = []
+        evidence: Dict[str, Any] = {}
 
         hit_agent = _pattern_hit(text, AGENT_PATTERNS) if text else None
         if hit_agent:
@@ -117,14 +93,12 @@ class DecisionEngine:
             reason_codes.append(RC_FRAUD_TEXT)
             evidence["fraud_pattern"] = hit_fraud
 
-        # Decide
         if score >= self.cfg.soft_block_threshold:
             return DecisionResult(
                 action="DROP",
                 score=min(1.0, score),
                 reason_codes=reason_codes,
                 evidence=evidence,
-                hard_block=False,
                 soft_block=True,
             )
 
@@ -133,8 +107,4 @@ class DecisionEngine:
             score=min(1.0, score),
             reason_codes=reason_codes,
             evidence=evidence,
-            hard_block=False,
-            soft_block=False,
         )
-
-# END_OF_FILE
