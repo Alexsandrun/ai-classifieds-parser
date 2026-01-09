@@ -1,198 +1,936 @@
-# Project inventory (full)
+# Project inventory
 
-- generated_at_utc: 2026-01-09T03:51:25Z
-- git_head: 040a6e65d7dee3b485b017848ee48d0972801653
-- git_status_dirty: YES
+Generated: 2026-01-09T06:14:22+02:00
+Commit: 5d61a514beb5fc9ae4dc88f2cb138b16a1b68f1e
 
-## Git status (porcelain)
-
-```
-M app/admin_api/auth.py
- M app/admin_api/help_registry.py
- M app/admin_api/routes/settings.py
- M app/admin_api/services.py
- M app/services/audit/repo.py
- M app/services/backup/monitor_repo.py
- M app/services/leads/queue_repo.py
- M app/services/retention/cleaners.py
- M app/services/retention/policy.py
- M app/services/settings/repo.py
- M pyproject.toml
- M tests/test_leads_queue.py
- M uv.lock
-?? app/admin_api/auth.py.bak.2026-01-09-044327
-?? app/admin_api/auth.py.bak.2026-01-09-052100
-?? app/admin_api/auth.py.bak.2026-01-09-052351
-?? app/admin_api/auth.py.bak.2026-01-09-052532
-?? app/admin_api/routes/settings.py.bak.2026-01-09-044347
-?? app/admin_api/services.py.bak.2026-01-09-050059
-?? app/admin_api/services.py.bak.2026-01-09-050500
-?? app/admin_api/services.py.bak2.2026-01-09-050346
-?? app/core/runtime_config.py
-?? app/services/audit/repo.py.bak.2026-01-09-045015
-?? app/services/audit/repo.py.bak.2026-01-09-050040
-?? app/services/audit/repo.py.bak.2026-01-09-050335
-?? app/services/audit/repo.py.bak.2026-01-09-050550
-?? app/services/audit/repo.py.bak.2026-01-09-050740
-?? app/services/audit/repo.py.bak.2026-01-09-050932
-?? app/services/audit/repo.py.bak.2026-01-09-051259
-?? app/services/backup/monitor_repo.py.bak.2026-01-09-045716
-?? app/services/backup/monitor_repo.py.bak.2026-01-09-050031
-?? app/services/leads/queue_repo.py.bak.2026-01-09-050021
-?? app/services/settings/repo.py.bak.2026-01-09-045027
-?? app/services/settings/repo.py.bak.2026-01-09-050049
-?? app/services/settings/repo.py.bak.2026-01-09-050335
-?? app/services/settings/repo.py.bak.2026-01-09-050550
-?? app/services/settings/repo.py.bak.2026-01-09-050740
-?? app/services/settings/repo.py.bak.2026-01-09-050932
-?? app/services/settings/repo.py.bak.2026-01-09-051309
-?? tests/test_leads_queue.py.bak.2026-01-09-044509
-```
-
-## Summary
-
-- dirs: 28
-- files: 111
-- total_bytes: 473089
-
-## Paths
-
-[FILE] .gitignore  (394 bytes, mtime=2026-01-09T01:46:07Z)
-[FILE] .python-version  (5 bytes, mtime=2026-01-08T21:39:02Z)
-[FILE] README.md  (162 bytes, mtime=2026-01-08T21:08:11Z)
-[DIR ] app/  (mtime=2026-01-09T01:30:40Z)
-[FILE] app/__init__.py  (0 bytes, mtime=2026-01-08T22:02:54Z)
-[DIR ] app/admin_api/  (mtime=2026-01-09T03:25:32Z)
-[FILE] app/admin_api/__init__.py  (0 bytes, mtime=2026-01-09T01:30:40Z)
-[FILE] app/admin_api/auth.py  (3404 bytes, mtime=2026-01-09T03:25:32Z)
-[FILE] app/admin_api/auth.py.bak.2026-01-09-044327  (1892 bytes, mtime=2026-01-09T01:38:02Z)
-[FILE] app/admin_api/auth.py.bak.2026-01-09-052100  (2025 bytes, mtime=2026-01-09T02:43:27Z)
-[FILE] app/admin_api/auth.py.bak.2026-01-09-052351  (3468 bytes, mtime=2026-01-09T03:21:00Z)
-[FILE] app/admin_api/auth.py.bak.2026-01-09-052532  (3009 bytes, mtime=2026-01-09T03:23:51Z)
-[FILE] app/admin_api/help_registry.py  (5720 bytes, mtime=2026-01-09T02:44:11Z)
-[FILE] app/admin_api/main.py  (706 bytes, mtime=2026-01-09T01:48:06Z)
-[DIR ] app/admin_api/routes/  (mtime=2026-01-09T02:43:47Z)
-[FILE] app/admin_api/routes/__init__.py  (0 bytes, mtime=2026-01-09T01:30:40Z)
-[FILE] app/admin_api/routes/help.py  (918 bytes, mtime=2026-01-09T01:33:04Z)
-[FILE] app/admin_api/routes/runtime.py  (556 bytes, mtime=2026-01-09T01:47:58Z)
-[FILE] app/admin_api/routes/settings.py  (3157 bytes, mtime=2026-01-09T02:43:47Z)
-[FILE] app/admin_api/routes/settings.py.bak.2026-01-09-044347  (3118 bytes, mtime=2026-01-09T01:38:34Z)
-[FILE] app/admin_api/schemas.py  (849 bytes, mtime=2026-01-09T01:31:56Z)
-[FILE] app/admin_api/services.py  (4171 bytes, mtime=2026-01-09T03:05:00Z)
-[FILE] app/admin_api/services.py.bak.2026-01-09-050059  (4155 bytes, mtime=2026-01-09T02:44:11Z)
-[FILE] app/admin_api/services.py.bak.2026-01-09-050500  (4166 bytes, mtime=2026-01-09T03:03:46Z)
-[FILE] app/admin_api/services.py.bak2.2026-01-09-050346  (4166 bytes, mtime=2026-01-09T03:00:59Z)
-[DIR ] app/core/  (mtime=2026-01-09T02:37:51Z)
-[FILE] app/core/__init__.py  (0 bytes, mtime=2026-01-08T22:02:54Z)
-[FILE] app/core/config.py  (380 bytes, mtime=2026-01-08T22:06:52Z)
-[FILE] app/core/contracts.py  (4723 bytes, mtime=2026-01-08T21:46:15Z)
-[FILE] app/core/crypto.py  (625 bytes, mtime=2026-01-08T22:09:16Z)
-[FILE] app/core/deployment.py  (632 bytes, mtime=2026-01-09T02:08:38Z)
-[FILE] app/core/events.py  (1031 bytes, mtime=2026-01-09T00:17:22Z)
-[FILE] app/core/normalize.py  (875 bytes, mtime=2026-01-08T22:09:01Z)
-[FILE] app/core/runtime_config.py  (924 bytes, mtime=2026-01-09T02:37:51Z)
-[FILE] app/main.py  (6408 bytes, mtime=2026-01-08T22:10:16Z)
-[DIR ] app/services/  (mtime=2026-01-09T01:52:25Z)
-[FILE] app/services/__init__.py  (0 bytes, mtime=2026-01-08T22:06:26Z)
-[DIR ] app/services/audit/  (mtime=2026-01-09T03:12:59Z)
-[FILE] app/services/audit/repo.py  (1528 bytes, mtime=2026-01-09T03:12:59Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-045015  (1495 bytes, mtime=2026-01-09T01:37:53Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-050040  (1509 bytes, mtime=2026-01-09T02:50:15Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-050335  (1509 bytes, mtime=2026-01-09T03:00:40Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-050550  (1509 bytes, mtime=2026-01-09T03:03:35Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-050740  (1509 bytes, mtime=2026-01-09T03:05:50Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-050932  (1509 bytes, mtime=2026-01-09T03:07:40Z)
-[FILE] app/services/audit/repo.py.bak.2026-01-09-051259  (1509 bytes, mtime=2026-01-09T03:09:32Z)
-[DIR ] app/services/backup/  (mtime=2026-01-09T03:00:31Z)
-[FILE] app/services/backup/__init__.py  (0 bytes, mtime=2026-01-09T00:36:16Z)
-[FILE] app/services/backup/monitor_logic.py  (4116 bytes, mtime=2026-01-09T00:38:32Z)
-[FILE] app/services/backup/monitor_repo.py  (11887 bytes, mtime=2026-01-09T03:00:31Z)
-[FILE] app/services/backup/monitor_repo.py.bak.2026-01-09-045716  (11777 bytes, mtime=2026-01-09T00:38:00Z)
-[FILE] app/services/backup/monitor_repo.py.bak.2026-01-09-050031  (11887 bytes, mtime=2026-01-09T02:57:16Z)
-[DIR ] app/services/decision/  (mtime=2026-01-09T01:53:35Z)
-[FILE] app/services/decision/__init__.py  (0 bytes, mtime=2026-01-09T01:58:51Z)
-[FILE] app/services/decision/engine.py  (3289 bytes, mtime=2026-01-09T01:59:46Z)
-[FILE] app/services/decision/lists_facade.py  (2429 bytes, mtime=2026-01-09T01:52:52Z)
-[FILE] app/services/decision/models.py  (502 bytes, mtime=2026-01-09T01:59:05Z)
-[DIR ] app/services/leads/  (mtime=2026-01-09T03:00:21Z)
-[FILE] app/services/leads/__init__.py  (0 bytes, mtime=2026-01-09T00:32:31Z)
-[FILE] app/services/leads/queue_repo.py  (11998 bytes, mtime=2026-01-09T03:00:21Z)
-[FILE] app/services/leads/queue_repo.py.bak.2026-01-09-050021  (11943 bytes, mtime=2026-01-09T01:27:56Z)
-[DIR ] app/services/lists/  (mtime=2026-01-09T01:41:42Z)
-[FILE] app/services/lists/__init__.py  (0 bytes, mtime=2026-01-08T22:06:26Z)
-[FILE] app/services/lists/blacklist_store.py  (3485 bytes, mtime=2026-01-08T22:09:28Z)
-[FILE] app/services/lists/import_csv.py  (2593 bytes, mtime=2026-01-08T22:09:56Z)
-[FILE] app/services/lists/providers.py  (1960 bytes, mtime=2026-01-09T01:41:42Z)
-[FILE] app/services/lists/whitelist_store.py  (3198 bytes, mtime=2026-01-08T22:09:45Z)
-[DIR ] app/services/notify/  (mtime=2026-01-09T00:36:44Z)
-[FILE] app/services/notify/__init__.py  (0 bytes, mtime=2026-01-09T00:36:16Z)
-[FILE] app/services/notify/telegram.py  (1407 bytes, mtime=2026-01-09T00:36:44Z)
-[DIR ] app/services/retention/  (mtime=2026-01-09T00:29:12Z)
-[FILE] app/services/retention/__init__.py  (0 bytes, mtime=2026-01-09T00:20:11Z)
-[FILE] app/services/retention/cleaners.py  (4888 bytes, mtime=2026-01-09T02:44:11Z)
-[FILE] app/services/retention/manager.py  (2896 bytes, mtime=2026-01-09T00:27:44Z)
-[FILE] app/services/retention/policy.py  (3841 bytes, mtime=2026-01-09T02:44:11Z)
-[DIR ] app/services/settings/  (mtime=2026-01-09T03:13:09Z)
-[FILE] app/services/settings/__init__.py  (0 bytes, mtime=2026-01-09T01:22:21Z)
-[FILE] app/services/settings/defaults.py  (870 bytes, mtime=2026-01-09T01:25:13Z)
-[FILE] app/services/settings/repo.py  (2577 bytes, mtime=2026-01-09T03:13:09Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-045027  (2544 bytes, mtime=2026-01-09T02:44:11Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-050049  (2558 bytes, mtime=2026-01-09T02:50:27Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-050335  (2558 bytes, mtime=2026-01-09T03:00:49Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-050550  (2558 bytes, mtime=2026-01-09T03:03:35Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-050740  (2558 bytes, mtime=2026-01-09T03:05:50Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-050932  (2558 bytes, mtime=2026-01-09T03:07:40Z)
-[FILE] app/services/settings/repo.py.bak.2026-01-09-051309  (2558 bytes, mtime=2026-01-09T03:09:32Z)
-[DIR ] app/services/storage/  (mtime=2026-01-09T00:18:26Z)
-[FILE] app/services/storage/__init__.py  (0 bytes, mtime=2026-01-09T00:17:12Z)
-[FILE] app/services/storage/ch_events.py  (2463 bytes, mtime=2026-01-09T00:17:56Z)
-[FILE] app/services/storage/pg_repo.py  (3845 bytes, mtime=2026-01-09T00:18:13Z)
-[DIR ] app/tools/  (mtime=2026-01-09T02:08:38Z)
-[FILE] app/tools/backup_monitor.py  (4528 bytes, mtime=2026-01-09T00:39:02Z)
-[FILE] app/tools/backup_report.py  (1857 bytes, mtime=2026-01-09T00:38:52Z)
-[FILE] app/tools/leads_janitor.py  (1164 bytes, mtime=2026-01-09T01:28:26Z)
-[FILE] app/tools/retention_run.py  (1699 bytes, mtime=2026-01-09T00:27:55Z)
-[FILE] app/tools/settings_init.py  (1108 bytes, mtime=2026-01-09T01:26:48Z)
-[DIR ] config/  (mtime=2026-01-09T01:45:00Z)
-[FILE] config/retention.json  (846 bytes, mtime=2026-01-09T00:20:24Z)
-[FILE] config/runtime.json  (41 bytes, mtime=2026-01-09T01:45:37Z)
-[DIR ] data/  (mtime=2026-01-09T00:20:11Z)
-[DIR ] data/raw/  (mtime=2026-01-09T00:20:11Z)
-[DIR ] docs/  (mtime=2026-01-09T03:36:45Z)
-[FILE] docs/ARCHITECTURE.md  (648 bytes, mtime=2026-01-09T03:47:09Z)
-[FILE] docs/CANONICAL_FIELDS.md  (1193 bytes, mtime=2026-01-09T03:47:09Z)
-[FILE] docs/INTERFACES.md  (437 bytes, mtime=2026-01-09T03:47:09Z)
-[FILE] docs/RULES.md  (1497 bytes, mtime=2026-01-09T03:47:09Z)
-[FILE] docs/_CHECKPOINT_STATUS.txt  (1473 bytes, mtime=2026-01-09T02:09:10Z)
-[FILE] docs/_FILES_CURRENT.txt  (62924 bytes, mtime=2026-01-09T02:09:10Z)
-[DIR ] docs/checkpoints/  (mtime=2026-01-09T03:29:55Z)
-[FILE] docs/checkpoints/CHECKPOINT_2026-01-09_0529.md  (3356 bytes, mtime=2026-01-09T03:29:56Z)
-[FILE] docs/checkpoints/INVENTORY.md  (56206 bytes, mtime=2026-01-09T03:29:00Z)
-[DIR ] docs/interfaces/  (mtime=2026-01-08T22:13:12Z)
-[FILE] docs/interfaces/IFACE-LISTS-MATCH-001.md  (891 bytes, mtime=2026-01-08T22:13:12Z)
-[DIR ] infra/  (mtime=2026-01-09T00:09:14Z)
-[DIR ] infra/clickhouse/  (mtime=2026-01-09T00:09:02Z)
-[DIR ] infra/clickhouse/init/  (mtime=2026-01-09T00:10:07Z)
-[FILE] infra/clickhouse/init/001_schema.sql  (1081 bytes, mtime=2026-01-09T00:10:07Z)
-[FILE] infra/docker-compose.yml  (1769 bytes, mtime=2026-01-09T00:09:14Z)
-[DIR ] infra/postgres/  (mtime=2026-01-09T00:09:02Z)
-[DIR ] infra/postgres/init/  (mtime=2026-01-09T01:36:24Z)
-[FILE] infra/postgres/init/001_schema.sql  (1769 bytes, mtime=2026-01-09T00:09:50Z)
-[FILE] infra/postgres/init/002_leads.sql  (1229 bytes, mtime=2026-01-09T00:32:05Z)
-[FILE] infra/postgres/init/003_backup_monitor.sql  (2459 bytes, mtime=2026-01-09T00:36:26Z)
-[FILE] infra/postgres/init/004_tenant_settings.sql  (478 bytes, mtime=2026-01-09T01:22:46Z)
-[FILE] infra/postgres/init/005_audit_events.sql  (922 bytes, mtime=2026-01-09T01:36:24Z)
-[DIR ] logs/  (mtime=2026-01-08T20:48:08Z)
-[FILE] pyproject.toml  (394 bytes, mtime=2026-01-09T02:38:17Z)
-[FILE] pytest.ini  (42 bytes, mtime=2026-01-08T22:00:12Z)
-[DIR ] tests/  (mtime=2026-01-09T02:45:09Z)
-[FILE] tests/test_admin_api_help_settings.py  (1754 bytes, mtime=2026-01-09T01:38:47Z)
-[FILE] tests/test_backup_monitor_logic.py  (3103 bytes, mtime=2026-01-09T00:39:44Z)
-[FILE] tests/test_decision_engine.py  (1846 bytes, mtime=2026-01-09T02:00:03Z)
-[FILE] tests/test_leads_queue.py  (1153 bytes, mtime=2026-01-09T02:45:09Z)
-[FILE] tests/test_leads_queue.py.bak.2026-01-09-044509  (1147 bytes, mtime=2026-01-09T00:34:34Z)
-[FILE] tests/test_lists.py  (2655 bytes, mtime=2026-01-08T22:10:52Z)
-[FILE] tests/test_retention.py  (1255 bytes, mtime=2026-01-09T00:28:11Z)
-[FILE] tests/test_runtime.py  (445 bytes, mtime=2026-01-09T01:48:14Z)
-[FILE] tests/test_smoke.py  (394 bytes, mtime=2026-01-08T22:10:34Z)
-[FILE] uv.lock  (113867 bytes, mtime=2026-01-09T02:38:18Z)
+- .
+- .gitignore
+- .mypy_cache
+- .mypy_cache/.gitignore
+- .mypy_cache/3.12
+- .mypy_cache/3.12/@plugins_snapshot.json
+- .mypy_cache/3.12/__future__.data.json
+- .mypy_cache/3.12/__future__.meta.json
+- .mypy_cache/3.12/_ast.data.json
+- .mypy_cache/3.12/_ast.meta.json
+- .mypy_cache/3.12/_asyncio.data.json
+- .mypy_cache/3.12/_asyncio.meta.json
+- .mypy_cache/3.12/_bisect.data.json
+- .mypy_cache/3.12/_bisect.meta.json
+- .mypy_cache/3.12/_blake2.data.json
+- .mypy_cache/3.12/_blake2.meta.json
+- .mypy_cache/3.12/_bz2.data.json
+- .mypy_cache/3.12/_bz2.meta.json
+- .mypy_cache/3.12/_codecs.data.json
+- .mypy_cache/3.12/_codecs.meta.json
+- .mypy_cache/3.12/_collections_abc.data.json
+- .mypy_cache/3.12/_collections_abc.meta.json
+- .mypy_cache/3.12/_compression.data.json
+- .mypy_cache/3.12/_compression.meta.json
+- .mypy_cache/3.12/_contextvars.data.json
+- .mypy_cache/3.12/_contextvars.meta.json
+- .mypy_cache/3.12/_csv.data.json
+- .mypy_cache/3.12/_csv.meta.json
+- .mypy_cache/3.12/_ctypes.data.json
+- .mypy_cache/3.12/_ctypes.meta.json
+- .mypy_cache/3.12/_decimal.data.json
+- .mypy_cache/3.12/_decimal.meta.json
+- .mypy_cache/3.12/_frozen_importlib.data.json
+- .mypy_cache/3.12/_frozen_importlib.meta.json
+- .mypy_cache/3.12/_frozen_importlib_external.data.json
+- .mypy_cache/3.12/_frozen_importlib_external.meta.json
+- .mypy_cache/3.12/_hashlib.data.json
+- .mypy_cache/3.12/_hashlib.meta.json
+- .mypy_cache/3.12/_io.data.json
+- .mypy_cache/3.12/_io.meta.json
+- .mypy_cache/3.12/_operator.data.json
+- .mypy_cache/3.12/_operator.meta.json
+- .mypy_cache/3.12/_pickle.data.json
+- .mypy_cache/3.12/_pickle.meta.json
+- .mypy_cache/3.12/_queue.data.json
+- .mypy_cache/3.12/_queue.meta.json
+- .mypy_cache/3.12/_random.data.json
+- .mypy_cache/3.12/_random.meta.json
+- .mypy_cache/3.12/_sitebuiltins.data.json
+- .mypy_cache/3.12/_sitebuiltins.meta.json
+- .mypy_cache/3.12/_socket.data.json
+- .mypy_cache/3.12/_socket.meta.json
+- .mypy_cache/3.12/_ssl.data.json
+- .mypy_cache/3.12/_ssl.meta.json
+- .mypy_cache/3.12/_stat.data.json
+- .mypy_cache/3.12/_stat.meta.json
+- .mypy_cache/3.12/_struct.data.json
+- .mypy_cache/3.12/_struct.meta.json
+- .mypy_cache/3.12/_thread.data.json
+- .mypy_cache/3.12/_thread.meta.json
+- .mypy_cache/3.12/_typeshed
+- .mypy_cache/3.12/_typeshed/__init__.data.json
+- .mypy_cache/3.12/_typeshed/__init__.meta.json
+- .mypy_cache/3.12/_typeshed/importlib.data.json
+- .mypy_cache/3.12/_typeshed/importlib.meta.json
+- .mypy_cache/3.12/_warnings.data.json
+- .mypy_cache/3.12/_warnings.meta.json
+- .mypy_cache/3.12/_weakref.data.json
+- .mypy_cache/3.12/_weakref.meta.json
+- .mypy_cache/3.12/_weakrefset.data.json
+- .mypy_cache/3.12/_weakrefset.meta.json
+- .mypy_cache/3.12/abc.data.json
+- .mypy_cache/3.12/abc.meta.json
+- .mypy_cache/3.12/annotated_doc
+- .mypy_cache/3.12/annotated_doc/__init__.data.json
+- .mypy_cache/3.12/annotated_doc/__init__.meta.json
+- .mypy_cache/3.12/annotated_doc/main.data.json
+- .mypy_cache/3.12/annotated_doc/main.meta.json
+- .mypy_cache/3.12/annotated_types
+- .mypy_cache/3.12/annotated_types/__init__.data.json
+- .mypy_cache/3.12/annotated_types/__init__.meta.json
+- .mypy_cache/3.12/anyio
+- .mypy_cache/3.12/anyio/__init__.data.json
+- .mypy_cache/3.12/anyio/__init__.meta.json
+- .mypy_cache/3.12/anyio/_core
+- .mypy_cache/3.12/anyio/abc
+- .mypy_cache/3.12/anyio/from_thread.data.json
+- .mypy_cache/3.12/anyio/from_thread.meta.json
+- .mypy_cache/3.12/anyio/lowlevel.data.json
+- .mypy_cache/3.12/anyio/lowlevel.meta.json
+- .mypy_cache/3.12/anyio/streams
+- .mypy_cache/3.12/anyio/to_thread.data.json
+- .mypy_cache/3.12/anyio/to_thread.meta.json
+- .mypy_cache/3.12/app
+- .mypy_cache/3.12/app/__init__.data.json
+- .mypy_cache/3.12/app/__init__.meta.json
+- .mypy_cache/3.12/app/admin_api
+- .mypy_cache/3.12/app/core
+- .mypy_cache/3.12/app/main.data.json
+- .mypy_cache/3.12/app/main.meta.json
+- .mypy_cache/3.12/app/services
+- .mypy_cache/3.12/app/tools
+- .mypy_cache/3.12/app/tools.data.json
+- .mypy_cache/3.12/app/tools.meta.json
+- .mypy_cache/3.12/argparse.data.json
+- .mypy_cache/3.12/argparse.meta.json
+- .mypy_cache/3.12/array.data.json
+- .mypy_cache/3.12/array.meta.json
+- .mypy_cache/3.12/ast.data.json
+- .mypy_cache/3.12/ast.meta.json
+- .mypy_cache/3.12/asyncio
+- .mypy_cache/3.12/asyncio/__init__.data.json
+- .mypy_cache/3.12/asyncio/__init__.meta.json
+- .mypy_cache/3.12/asyncio/base_events.data.json
+- .mypy_cache/3.12/asyncio/base_events.meta.json
+- .mypy_cache/3.12/asyncio/base_futures.data.json
+- .mypy_cache/3.12/asyncio/base_futures.meta.json
+- .mypy_cache/3.12/asyncio/coroutines.data.json
+- .mypy_cache/3.12/asyncio/coroutines.meta.json
+- .mypy_cache/3.12/asyncio/events.data.json
+- .mypy_cache/3.12/asyncio/events.meta.json
+- .mypy_cache/3.12/asyncio/exceptions.data.json
+- .mypy_cache/3.12/asyncio/exceptions.meta.json
+- .mypy_cache/3.12/asyncio/futures.data.json
+- .mypy_cache/3.12/asyncio/futures.meta.json
+- .mypy_cache/3.12/asyncio/locks.data.json
+- .mypy_cache/3.12/asyncio/locks.meta.json
+- .mypy_cache/3.12/asyncio/mixins.data.json
+- .mypy_cache/3.12/asyncio/mixins.meta.json
+- .mypy_cache/3.12/asyncio/protocols.data.json
+- .mypy_cache/3.12/asyncio/protocols.meta.json
+- .mypy_cache/3.12/asyncio/queues.data.json
+- .mypy_cache/3.12/asyncio/queues.meta.json
+- .mypy_cache/3.12/asyncio/runners.data.json
+- .mypy_cache/3.12/asyncio/runners.meta.json
+- .mypy_cache/3.12/asyncio/selector_events.data.json
+- .mypy_cache/3.12/asyncio/selector_events.meta.json
+- .mypy_cache/3.12/asyncio/streams.data.json
+- .mypy_cache/3.12/asyncio/streams.meta.json
+- .mypy_cache/3.12/asyncio/subprocess.data.json
+- .mypy_cache/3.12/asyncio/subprocess.meta.json
+- .mypy_cache/3.12/asyncio/taskgroups.data.json
+- .mypy_cache/3.12/asyncio/taskgroups.meta.json
+- .mypy_cache/3.12/asyncio/tasks.data.json
+- .mypy_cache/3.12/asyncio/tasks.meta.json
+- .mypy_cache/3.12/asyncio/threads.data.json
+- .mypy_cache/3.12/asyncio/threads.meta.json
+- .mypy_cache/3.12/asyncio/timeouts.data.json
+- .mypy_cache/3.12/asyncio/timeouts.meta.json
+- .mypy_cache/3.12/asyncio/transports.data.json
+- .mypy_cache/3.12/asyncio/transports.meta.json
+- .mypy_cache/3.12/asyncio/unix_events.data.json
+- .mypy_cache/3.12/asyncio/unix_events.meta.json
+- .mypy_cache/3.12/atexit.data.json
+- .mypy_cache/3.12/atexit.meta.json
+- .mypy_cache/3.12/base64.data.json
+- .mypy_cache/3.12/base64.meta.json
+- .mypy_cache/3.12/binascii.data.json
+- .mypy_cache/3.12/binascii.meta.json
+- .mypy_cache/3.12/bisect.data.json
+- .mypy_cache/3.12/bisect.meta.json
+- .mypy_cache/3.12/builtins.data.json
+- .mypy_cache/3.12/builtins.meta.json
+- .mypy_cache/3.12/bz2.data.json
+- .mypy_cache/3.12/bz2.meta.json
+- .mypy_cache/3.12/certifi
+- .mypy_cache/3.12/certifi/__init__.data.json
+- .mypy_cache/3.12/certifi/__init__.meta.json
+- .mypy_cache/3.12/certifi/core.data.json
+- .mypy_cache/3.12/certifi/core.meta.json
+- .mypy_cache/3.12/clickhouse_connect
+- .mypy_cache/3.12/clickhouse_connect/__init__.data.json
+- .mypy_cache/3.12/clickhouse_connect/__init__.meta.json
+- .mypy_cache/3.12/clickhouse_connect/__version__.data.json
+- .mypy_cache/3.12/clickhouse_connect/__version__.meta.json
+- .mypy_cache/3.12/clickhouse_connect/common.data.json
+- .mypy_cache/3.12/clickhouse_connect/common.meta.json
+- .mypy_cache/3.12/clickhouse_connect/datatypes
+- .mypy_cache/3.12/clickhouse_connect/driver
+- .mypy_cache/3.12/clickhouse_connect/json_impl.data.json
+- .mypy_cache/3.12/clickhouse_connect/json_impl.meta.json
+- .mypy_cache/3.12/codecs.data.json
+- .mypy_cache/3.12/codecs.meta.json
+- .mypy_cache/3.12/collections
+- .mypy_cache/3.12/collections/__init__.data.json
+- .mypy_cache/3.12/collections/__init__.meta.json
+- .mypy_cache/3.12/collections/abc.data.json
+- .mypy_cache/3.12/collections/abc.meta.json
+- .mypy_cache/3.12/colorsys.data.json
+- .mypy_cache/3.12/colorsys.meta.json
+- .mypy_cache/3.12/concurrent
+- .mypy_cache/3.12/concurrent/__init__.data.json
+- .mypy_cache/3.12/concurrent/__init__.meta.json
+- .mypy_cache/3.12/concurrent/futures
+- .mypy_cache/3.12/contextlib.data.json
+- .mypy_cache/3.12/contextlib.meta.json
+- .mypy_cache/3.12/contextvars.data.json
+- .mypy_cache/3.12/contextvars.meta.json
+- .mypy_cache/3.12/copy.data.json
+- .mypy_cache/3.12/copy.meta.json
+- .mypy_cache/3.12/copyreg.data.json
+- .mypy_cache/3.12/copyreg.meta.json
+- .mypy_cache/3.12/csv.data.json
+- .mypy_cache/3.12/csv.meta.json
+- .mypy_cache/3.12/ctypes
+- .mypy_cache/3.12/ctypes/__init__.data.json
+- .mypy_cache/3.12/ctypes/__init__.meta.json
+- .mypy_cache/3.12/ctypes/_endian.data.json
+- .mypy_cache/3.12/ctypes/_endian.meta.json
+- .mypy_cache/3.12/ctypes/util.data.json
+- .mypy_cache/3.12/ctypes/util.meta.json
+- .mypy_cache/3.12/dataclasses.data.json
+- .mypy_cache/3.12/dataclasses.meta.json
+- .mypy_cache/3.12/datetime.data.json
+- .mypy_cache/3.12/datetime.meta.json
+- .mypy_cache/3.12/decimal.data.json
+- .mypy_cache/3.12/decimal.meta.json
+- .mypy_cache/3.12/dis.data.json
+- .mypy_cache/3.12/dis.meta.json
+- .mypy_cache/3.12/email
+- .mypy_cache/3.12/email/__init__.data.json
+- .mypy_cache/3.12/email/__init__.meta.json
+- .mypy_cache/3.12/email/_policybase.data.json
+- .mypy_cache/3.12/email/_policybase.meta.json
+- .mypy_cache/3.12/email/charset.data.json
+- .mypy_cache/3.12/email/charset.meta.json
+- .mypy_cache/3.12/email/contentmanager.data.json
+- .mypy_cache/3.12/email/contentmanager.meta.json
+- .mypy_cache/3.12/email/errors.data.json
+- .mypy_cache/3.12/email/errors.meta.json
+- .mypy_cache/3.12/email/header.data.json
+- .mypy_cache/3.12/email/header.meta.json
+- .mypy_cache/3.12/email/message.data.json
+- .mypy_cache/3.12/email/message.meta.json
+- .mypy_cache/3.12/email/policy.data.json
+- .mypy_cache/3.12/email/policy.meta.json
+- .mypy_cache/3.12/email/utils.data.json
+- .mypy_cache/3.12/email/utils.meta.json
+- .mypy_cache/3.12/enum.data.json
+- .mypy_cache/3.12/enum.meta.json
+- .mypy_cache/3.12/errno.data.json
+- .mypy_cache/3.12/errno.meta.json
+- .mypy_cache/3.12/fastapi
+- .mypy_cache/3.12/fastapi/__init__.data.json
+- .mypy_cache/3.12/fastapi/__init__.meta.json
+- .mypy_cache/3.12/fastapi/_compat
+- .mypy_cache/3.12/fastapi/applications.data.json
+- .mypy_cache/3.12/fastapi/applications.meta.json
+- .mypy_cache/3.12/fastapi/background.data.json
+- .mypy_cache/3.12/fastapi/background.meta.json
+- .mypy_cache/3.12/fastapi/concurrency.data.json
+- .mypy_cache/3.12/fastapi/concurrency.meta.json
+- .mypy_cache/3.12/fastapi/datastructures.data.json
+- .mypy_cache/3.12/fastapi/datastructures.meta.json
+- .mypy_cache/3.12/fastapi/dependencies
+- .mypy_cache/3.12/fastapi/encoders.data.json
+- .mypy_cache/3.12/fastapi/encoders.meta.json
+- .mypy_cache/3.12/fastapi/exception_handlers.data.json
+- .mypy_cache/3.12/fastapi/exception_handlers.meta.json
+- .mypy_cache/3.12/fastapi/exceptions.data.json
+- .mypy_cache/3.12/fastapi/exceptions.meta.json
+- .mypy_cache/3.12/fastapi/logger.data.json
+- .mypy_cache/3.12/fastapi/logger.meta.json
+- .mypy_cache/3.12/fastapi/middleware
+- .mypy_cache/3.12/fastapi/openapi
+- .mypy_cache/3.12/fastapi/param_functions.data.json
+- .mypy_cache/3.12/fastapi/param_functions.meta.json
+- .mypy_cache/3.12/fastapi/params.data.json
+- .mypy_cache/3.12/fastapi/params.meta.json
+- .mypy_cache/3.12/fastapi/requests.data.json
+- .mypy_cache/3.12/fastapi/requests.meta.json
+- .mypy_cache/3.12/fastapi/responses.data.json
+- .mypy_cache/3.12/fastapi/responses.meta.json
+- .mypy_cache/3.12/fastapi/routing.data.json
+- .mypy_cache/3.12/fastapi/routing.meta.json
+- .mypy_cache/3.12/fastapi/security
+- .mypy_cache/3.12/fastapi/types.data.json
+- .mypy_cache/3.12/fastapi/types.meta.json
+- .mypy_cache/3.12/fastapi/utils.data.json
+- .mypy_cache/3.12/fastapi/utils.meta.json
+- .mypy_cache/3.12/fastapi/websockets.data.json
+- .mypy_cache/3.12/fastapi/websockets.meta.json
+- .mypy_cache/3.12/fractions.data.json
+- .mypy_cache/3.12/fractions.meta.json
+- .mypy_cache/3.12/functools.data.json
+- .mypy_cache/3.12/functools.meta.json
+- .mypy_cache/3.12/genericpath.data.json
+- .mypy_cache/3.12/genericpath.meta.json
+- .mypy_cache/3.12/getpass.data.json
+- .mypy_cache/3.12/getpass.meta.json
+- .mypy_cache/3.12/gzip.data.json
+- .mypy_cache/3.12/gzip.meta.json
+- .mypy_cache/3.12/hashlib.data.json
+- .mypy_cache/3.12/hashlib.meta.json
+- .mypy_cache/3.12/hmac.data.json
+- .mypy_cache/3.12/hmac.meta.json
+- .mypy_cache/3.12/html
+- .mypy_cache/3.12/html/__init__.data.json
+- .mypy_cache/3.12/html/__init__.meta.json
+- .mypy_cache/3.12/http
+- .mypy_cache/3.12/http/__init__.data.json
+- .mypy_cache/3.12/http/__init__.meta.json
+- .mypy_cache/3.12/http/client.data.json
+- .mypy_cache/3.12/http/client.meta.json
+- .mypy_cache/3.12/http/cookiejar.data.json
+- .mypy_cache/3.12/http/cookiejar.meta.json
+- .mypy_cache/3.12/http/cookies.data.json
+- .mypy_cache/3.12/http/cookies.meta.json
+- .mypy_cache/3.12/idna
+- .mypy_cache/3.12/idna/__init__.data.json
+- .mypy_cache/3.12/idna/__init__.meta.json
+- .mypy_cache/3.12/idna/core.data.json
+- .mypy_cache/3.12/idna/core.meta.json
+- .mypy_cache/3.12/idna/idnadata.data.json
+- .mypy_cache/3.12/idna/idnadata.meta.json
+- .mypy_cache/3.12/idna/intranges.data.json
+- .mypy_cache/3.12/idna/intranges.meta.json
+- .mypy_cache/3.12/idna/package_data.data.json
+- .mypy_cache/3.12/idna/package_data.meta.json
+- .mypy_cache/3.12/importlib
+- .mypy_cache/3.12/importlib/__init__.data.json
+- .mypy_cache/3.12/importlib/__init__.meta.json
+- .mypy_cache/3.12/importlib/_abc.data.json
+- .mypy_cache/3.12/importlib/_abc.meta.json
+- .mypy_cache/3.12/importlib/_bootstrap.data.json
+- .mypy_cache/3.12/importlib/_bootstrap.meta.json
+- .mypy_cache/3.12/importlib/_bootstrap_external.data.json
+- .mypy_cache/3.12/importlib/_bootstrap_external.meta.json
+- .mypy_cache/3.12/importlib/abc.data.json
+- .mypy_cache/3.12/importlib/abc.meta.json
+- .mypy_cache/3.12/importlib/machinery.data.json
+- .mypy_cache/3.12/importlib/machinery.meta.json
+- .mypy_cache/3.12/importlib/metadata
+- .mypy_cache/3.12/importlib/readers.data.json
+- .mypy_cache/3.12/importlib/readers.meta.json
+- .mypy_cache/3.12/importlib/resources
+- .mypy_cache/3.12/inspect.data.json
+- .mypy_cache/3.12/inspect.meta.json
+- .mypy_cache/3.12/io.data.json
+- .mypy_cache/3.12/io.meta.json
+- .mypy_cache/3.12/ipaddress.data.json
+- .mypy_cache/3.12/ipaddress.meta.json
+- .mypy_cache/3.12/itertools.data.json
+- .mypy_cache/3.12/itertools.meta.json
+- .mypy_cache/3.12/json
+- .mypy_cache/3.12/json/__init__.data.json
+- .mypy_cache/3.12/json/__init__.meta.json
+- .mypy_cache/3.12/json/decoder.data.json
+- .mypy_cache/3.12/json/decoder.meta.json
+- .mypy_cache/3.12/json/encoder.data.json
+- .mypy_cache/3.12/json/encoder.meta.json
+- .mypy_cache/3.12/keyword.data.json
+- .mypy_cache/3.12/keyword.meta.json
+- .mypy_cache/3.12/logging
+- .mypy_cache/3.12/logging/__init__.data.json
+- .mypy_cache/3.12/logging/__init__.meta.json
+- .mypy_cache/3.12/math.data.json
+- .mypy_cache/3.12/math.meta.json
+- .mypy_cache/3.12/mimetypes.data.json
+- .mypy_cache/3.12/mimetypes.meta.json
+- .mypy_cache/3.12/multiprocessing
+- .mypy_cache/3.12/multiprocessing/__init__.data.json
+- .mypy_cache/3.12/multiprocessing/__init__.meta.json
+- .mypy_cache/3.12/multiprocessing/connection.data.json
+- .mypy_cache/3.12/multiprocessing/connection.meta.json
+- .mypy_cache/3.12/multiprocessing/context.data.json
+- .mypy_cache/3.12/multiprocessing/context.meta.json
+- .mypy_cache/3.12/multiprocessing/managers.data.json
+- .mypy_cache/3.12/multiprocessing/managers.meta.json
+- .mypy_cache/3.12/multiprocessing/pool.data.json
+- .mypy_cache/3.12/multiprocessing/pool.meta.json
+- .mypy_cache/3.12/multiprocessing/popen_fork.data.json
+- .mypy_cache/3.12/multiprocessing/popen_fork.meta.json
+- .mypy_cache/3.12/multiprocessing/popen_forkserver.data.json
+- .mypy_cache/3.12/multiprocessing/popen_forkserver.meta.json
+- .mypy_cache/3.12/multiprocessing/popen_spawn_posix.data.json
+- .mypy_cache/3.12/multiprocessing/popen_spawn_posix.meta.json
+- .mypy_cache/3.12/multiprocessing/popen_spawn_win32.data.json
+- .mypy_cache/3.12/multiprocessing/popen_spawn_win32.meta.json
+- .mypy_cache/3.12/multiprocessing/process.data.json
+- .mypy_cache/3.12/multiprocessing/process.meta.json
+- .mypy_cache/3.12/multiprocessing/queues.data.json
+- .mypy_cache/3.12/multiprocessing/queues.meta.json
+- .mypy_cache/3.12/multiprocessing/reduction.data.json
+- .mypy_cache/3.12/multiprocessing/reduction.meta.json
+- .mypy_cache/3.12/multiprocessing/shared_memory.data.json
+- .mypy_cache/3.12/multiprocessing/shared_memory.meta.json
+- .mypy_cache/3.12/multiprocessing/sharedctypes.data.json
+- .mypy_cache/3.12/multiprocessing/sharedctypes.meta.json
+- .mypy_cache/3.12/multiprocessing/spawn.data.json
+- .mypy_cache/3.12/multiprocessing/spawn.meta.json
+- .mypy_cache/3.12/multiprocessing/synchronize.data.json
+- .mypy_cache/3.12/multiprocessing/synchronize.meta.json
+- .mypy_cache/3.12/multiprocessing/util.data.json
+- .mypy_cache/3.12/multiprocessing/util.meta.json
+- .mypy_cache/3.12/numbers.data.json
+- .mypy_cache/3.12/numbers.meta.json
+- .mypy_cache/3.12/opcode.data.json
+- .mypy_cache/3.12/opcode.meta.json
+- .mypy_cache/3.12/operator.data.json
+- .mypy_cache/3.12/operator.meta.json
+- .mypy_cache/3.12/os
+- .mypy_cache/3.12/os/__init__.data.json
+- .mypy_cache/3.12/os/__init__.meta.json
+- .mypy_cache/3.12/os/path.data.json
+- .mypy_cache/3.12/os/path.meta.json
+- .mypy_cache/3.12/pathlib
+- .mypy_cache/3.12/pathlib/__init__.data.json
+- .mypy_cache/3.12/pathlib/__init__.meta.json
+- .mypy_cache/3.12/pickle.data.json
+- .mypy_cache/3.12/pickle.meta.json
+- .mypy_cache/3.12/posixpath.data.json
+- .mypy_cache/3.12/posixpath.meta.json
+- .mypy_cache/3.12/psycopg
+- .mypy_cache/3.12/psycopg/__init__.data.json
+- .mypy_cache/3.12/psycopg/__init__.meta.json
+- .mypy_cache/3.12/psycopg/_acompat.data.json
+- .mypy_cache/3.12/psycopg/_acompat.meta.json
+- .mypy_cache/3.12/psycopg/_adapters_map.data.json
+- .mypy_cache/3.12/psycopg/_adapters_map.meta.json
+- .mypy_cache/3.12/psycopg/_capabilities.data.json
+- .mypy_cache/3.12/psycopg/_capabilities.meta.json
+- .mypy_cache/3.12/psycopg/_cmodule.data.json
+- .mypy_cache/3.12/psycopg/_cmodule.meta.json
+- .mypy_cache/3.12/psycopg/_column.data.json
+- .mypy_cache/3.12/psycopg/_column.meta.json
+- .mypy_cache/3.12/psycopg/_compat.data.json
+- .mypy_cache/3.12/psycopg/_compat.meta.json
+- .mypy_cache/3.12/psycopg/_connection_base.data.json
+- .mypy_cache/3.12/psycopg/_connection_base.meta.json
+- .mypy_cache/3.12/psycopg/_connection_info.data.json
+- .mypy_cache/3.12/psycopg/_connection_info.meta.json
+- .mypy_cache/3.12/psycopg/_conninfo_attempts.data.json
+- .mypy_cache/3.12/psycopg/_conninfo_attempts.meta.json
+- .mypy_cache/3.12/psycopg/_conninfo_attempts_async.data.json
+- .mypy_cache/3.12/psycopg/_conninfo_attempts_async.meta.json
+- .mypy_cache/3.12/psycopg/_conninfo_utils.data.json
+- .mypy_cache/3.12/psycopg/_conninfo_utils.meta.json
+- .mypy_cache/3.12/psycopg/_copy.data.json
+- .mypy_cache/3.12/psycopg/_copy.meta.json
+- .mypy_cache/3.12/psycopg/_copy_async.data.json
+- .mypy_cache/3.12/psycopg/_copy_async.meta.json
+- .mypy_cache/3.12/psycopg/_copy_base.data.json
+- .mypy_cache/3.12/psycopg/_copy_base.meta.json
+- .mypy_cache/3.12/psycopg/_cursor_base.data.json
+- .mypy_cache/3.12/psycopg/_cursor_base.meta.json
+- .mypy_cache/3.12/psycopg/_encodings.data.json
+- .mypy_cache/3.12/psycopg/_encodings.meta.json
+- .mypy_cache/3.12/psycopg/_enums.data.json
+- .mypy_cache/3.12/psycopg/_enums.meta.json
+- .mypy_cache/3.12/psycopg/_oids.data.json
+- .mypy_cache/3.12/psycopg/_oids.meta.json
+- .mypy_cache/3.12/psycopg/_pipeline.data.json
+- .mypy_cache/3.12/psycopg/_pipeline.meta.json
+- .mypy_cache/3.12/psycopg/_pipeline_async.data.json
+- .mypy_cache/3.12/psycopg/_pipeline_async.meta.json
+- .mypy_cache/3.12/psycopg/_pipeline_base.data.json
+- .mypy_cache/3.12/psycopg/_pipeline_base.meta.json
+- .mypy_cache/3.12/psycopg/_preparing.data.json
+- .mypy_cache/3.12/psycopg/_preparing.meta.json
+- .mypy_cache/3.12/psycopg/_py_transformer.data.json
+- .mypy_cache/3.12/psycopg/_py_transformer.meta.json
+- .mypy_cache/3.12/psycopg/_queries.data.json
+- .mypy_cache/3.12/psycopg/_queries.meta.json
+- .mypy_cache/3.12/psycopg/_server_cursor.data.json
+- .mypy_cache/3.12/psycopg/_server_cursor.meta.json
+- .mypy_cache/3.12/psycopg/_server_cursor_async.data.json
+- .mypy_cache/3.12/psycopg/_server_cursor_async.meta.json
+- .mypy_cache/3.12/psycopg/_server_cursor_base.data.json
+- .mypy_cache/3.12/psycopg/_server_cursor_base.meta.json
+- .mypy_cache/3.12/psycopg/_struct.data.json
+- .mypy_cache/3.12/psycopg/_struct.meta.json
+- .mypy_cache/3.12/psycopg/_tpc.data.json
+- .mypy_cache/3.12/psycopg/_tpc.meta.json
+- .mypy_cache/3.12/psycopg/_transformer.data.json
+- .mypy_cache/3.12/psycopg/_transformer.meta.json
+- .mypy_cache/3.12/psycopg/_tstrings.data.json
+- .mypy_cache/3.12/psycopg/_tstrings.meta.json
+- .mypy_cache/3.12/psycopg/_typeinfo.data.json
+- .mypy_cache/3.12/psycopg/_typeinfo.meta.json
+- .mypy_cache/3.12/psycopg/_typemod.data.json
+- .mypy_cache/3.12/psycopg/_typemod.meta.json
+- .mypy_cache/3.12/psycopg/_tz.data.json
+- .mypy_cache/3.12/psycopg/_tz.meta.json
+- .mypy_cache/3.12/psycopg/abc.data.json
+- .mypy_cache/3.12/psycopg/abc.meta.json
+- .mypy_cache/3.12/psycopg/adapt.data.json
+- .mypy_cache/3.12/psycopg/adapt.meta.json
+- .mypy_cache/3.12/psycopg/client_cursor.data.json
+- .mypy_cache/3.12/psycopg/client_cursor.meta.json
+- .mypy_cache/3.12/psycopg/connection.data.json
+- .mypy_cache/3.12/psycopg/connection.meta.json
+- .mypy_cache/3.12/psycopg/connection_async.data.json
+- .mypy_cache/3.12/psycopg/connection_async.meta.json
+- .mypy_cache/3.12/psycopg/conninfo.data.json
+- .mypy_cache/3.12/psycopg/conninfo.meta.json
+- .mypy_cache/3.12/psycopg/copy.data.json
+- .mypy_cache/3.12/psycopg/copy.meta.json
+- .mypy_cache/3.12/psycopg/cursor.data.json
+- .mypy_cache/3.12/psycopg/cursor.meta.json
+- .mypy_cache/3.12/psycopg/cursor_async.data.json
+- .mypy_cache/3.12/psycopg/cursor_async.meta.json
+- .mypy_cache/3.12/psycopg/dbapi20.data.json
+- .mypy_cache/3.12/psycopg/dbapi20.meta.json
+- .mypy_cache/3.12/psycopg/errors.data.json
+- .mypy_cache/3.12/psycopg/errors.meta.json
+- .mypy_cache/3.12/psycopg/generators.data.json
+- .mypy_cache/3.12/psycopg/generators.meta.json
+- .mypy_cache/3.12/psycopg/postgres.data.json
+- .mypy_cache/3.12/psycopg/postgres.meta.json
+- .mypy_cache/3.12/psycopg/pq
+- .mypy_cache/3.12/psycopg/raw_cursor.data.json
+- .mypy_cache/3.12/psycopg/raw_cursor.meta.json
+- .mypy_cache/3.12/psycopg/rows.data.json
+- .mypy_cache/3.12/psycopg/rows.meta.json
+- .mypy_cache/3.12/psycopg/sql.data.json
+- .mypy_cache/3.12/psycopg/sql.meta.json
+- .mypy_cache/3.12/psycopg/transaction.data.json
+- .mypy_cache/3.12/psycopg/transaction.meta.json
+- .mypy_cache/3.12/psycopg/types
+- .mypy_cache/3.12/psycopg/version.data.json
+- .mypy_cache/3.12/psycopg/version.meta.json
+- .mypy_cache/3.12/psycopg/waiting.data.json
+- .mypy_cache/3.12/psycopg/waiting.meta.json
+- .mypy_cache/3.12/psycopg_binary
+- .mypy_cache/3.12/psycopg_binary/__init__.data.json
+- .mypy_cache/3.12/psycopg_binary/__init__.meta.json
+- .mypy_cache/3.12/psycopg_binary/_psycopg.data.json
+- .mypy_cache/3.12/psycopg_binary/_psycopg.meta.json
+- .mypy_cache/3.12/psycopg_binary/version.data.json
+- .mypy_cache/3.12/psycopg_binary/version.meta.json
+- .mypy_cache/3.12/pydantic
+- .mypy_cache/3.12/pydantic/__init__.data.json
+- .mypy_cache/3.12/pydantic/__init__.meta.json
+- .mypy_cache/3.12/pydantic/_internal
+- .mypy_cache/3.12/pydantic/_migration.data.json
+- .mypy_cache/3.12/pydantic/_migration.meta.json
+- .mypy_cache/3.12/pydantic/aliases.data.json
+- .mypy_cache/3.12/pydantic/aliases.meta.json
+- .mypy_cache/3.12/pydantic/annotated_handlers.data.json
+- .mypy_cache/3.12/pydantic/annotated_handlers.meta.json
+- .mypy_cache/3.12/pydantic/color.data.json
+- .mypy_cache/3.12/pydantic/color.meta.json
+- .mypy_cache/3.12/pydantic/config.data.json
+- .mypy_cache/3.12/pydantic/config.meta.json
+- .mypy_cache/3.12/pydantic/dataclasses.data.json
+- .mypy_cache/3.12/pydantic/dataclasses.meta.json
+- .mypy_cache/3.12/pydantic/deprecated
+- .mypy_cache/3.12/pydantic/errors.data.json
+- .mypy_cache/3.12/pydantic/errors.meta.json
+- .mypy_cache/3.12/pydantic/fields.data.json
+- .mypy_cache/3.12/pydantic/fields.meta.json
+- .mypy_cache/3.12/pydantic/functional_serializers.data.json
+- .mypy_cache/3.12/pydantic/functional_serializers.meta.json
+- .mypy_cache/3.12/pydantic/functional_validators.data.json
+- .mypy_cache/3.12/pydantic/functional_validators.meta.json
+- .mypy_cache/3.12/pydantic/json_schema.data.json
+- .mypy_cache/3.12/pydantic/json_schema.meta.json
+- .mypy_cache/3.12/pydantic/main.data.json
+- .mypy_cache/3.12/pydantic/main.meta.json
+- .mypy_cache/3.12/pydantic/networks.data.json
+- .mypy_cache/3.12/pydantic/networks.meta.json
+- .mypy_cache/3.12/pydantic/plugin
+- .mypy_cache/3.12/pydantic/root_model.data.json
+- .mypy_cache/3.12/pydantic/root_model.meta.json
+- .mypy_cache/3.12/pydantic/type_adapter.data.json
+- .mypy_cache/3.12/pydantic/type_adapter.meta.json
+- .mypy_cache/3.12/pydantic/types.data.json
+- .mypy_cache/3.12/pydantic/types.meta.json
+- .mypy_cache/3.12/pydantic/v1
+- .mypy_cache/3.12/pydantic/validate_call_decorator.data.json
+- .mypy_cache/3.12/pydantic/validate_call_decorator.meta.json
+- .mypy_cache/3.12/pydantic/version.data.json
+- .mypy_cache/3.12/pydantic/version.meta.json
+- .mypy_cache/3.12/pydantic/warnings.data.json
+- .mypy_cache/3.12/pydantic/warnings.meta.json
+- .mypy_cache/3.12/pydantic_core
+- .mypy_cache/3.12/pydantic_core/__init__.data.json
+- .mypy_cache/3.12/pydantic_core/__init__.meta.json
+- .mypy_cache/3.12/pydantic_core/_pydantic_core.data.json
+- .mypy_cache/3.12/pydantic_core/_pydantic_core.meta.json
+- .mypy_cache/3.12/pydantic_core/core_schema.data.json
+- .mypy_cache/3.12/pydantic_core/core_schema.meta.json
+- .mypy_cache/3.12/queue.data.json
+- .mypy_cache/3.12/queue.meta.json
+- .mypy_cache/3.12/random.data.json
+- .mypy_cache/3.12/random.meta.json
+- .mypy_cache/3.12/re.data.json
+- .mypy_cache/3.12/re.meta.json
+- .mypy_cache/3.12/resource.data.json
+- .mypy_cache/3.12/resource.meta.json
+- .mypy_cache/3.12/secrets.data.json
+- .mypy_cache/3.12/secrets.meta.json
+- .mypy_cache/3.12/select.data.json
+- .mypy_cache/3.12/select.meta.json
+- .mypy_cache/3.12/selectors.data.json
+- .mypy_cache/3.12/selectors.meta.json
+- .mypy_cache/3.12/shlex.data.json
+- .mypy_cache/3.12/shlex.meta.json
+- .mypy_cache/3.12/shutil.data.json
+- .mypy_cache/3.12/shutil.meta.json
+- .mypy_cache/3.12/signal.data.json
+- .mypy_cache/3.12/signal.meta.json
+- .mypy_cache/3.12/socket.data.json
+- .mypy_cache/3.12/socket.meta.json
+- .mypy_cache/3.12/sre_compile.data.json
+- .mypy_cache/3.12/sre_compile.meta.json
+- .mypy_cache/3.12/sre_constants.data.json
+- .mypy_cache/3.12/sre_constants.meta.json
+- .mypy_cache/3.12/sre_parse.data.json
+- .mypy_cache/3.12/sre_parse.meta.json
+- .mypy_cache/3.12/ssl.data.json
+- .mypy_cache/3.12/ssl.meta.json
+- .mypy_cache/3.12/starlette
+- .mypy_cache/3.12/starlette/__init__.data.json
+- .mypy_cache/3.12/starlette/__init__.meta.json
+- .mypy_cache/3.12/starlette/_exception_handler.data.json
+- .mypy_cache/3.12/starlette/_exception_handler.meta.json
+- .mypy_cache/3.12/starlette/_utils.data.json
+- .mypy_cache/3.12/starlette/_utils.meta.json
+- .mypy_cache/3.12/starlette/applications.data.json
+- .mypy_cache/3.12/starlette/applications.meta.json
+- .mypy_cache/3.12/starlette/background.data.json
+- .mypy_cache/3.12/starlette/background.meta.json
+- .mypy_cache/3.12/starlette/concurrency.data.json
+- .mypy_cache/3.12/starlette/concurrency.meta.json
+- .mypy_cache/3.12/starlette/convertors.data.json
+- .mypy_cache/3.12/starlette/convertors.meta.json
+- .mypy_cache/3.12/starlette/datastructures.data.json
+- .mypy_cache/3.12/starlette/datastructures.meta.json
+- .mypy_cache/3.12/starlette/exceptions.data.json
+- .mypy_cache/3.12/starlette/exceptions.meta.json
+- .mypy_cache/3.12/starlette/formparsers.data.json
+- .mypy_cache/3.12/starlette/formparsers.meta.json
+- .mypy_cache/3.12/starlette/middleware
+- .mypy_cache/3.12/starlette/requests.data.json
+- .mypy_cache/3.12/starlette/requests.meta.json
+- .mypy_cache/3.12/starlette/responses.data.json
+- .mypy_cache/3.12/starlette/responses.meta.json
+- .mypy_cache/3.12/starlette/routing.data.json
+- .mypy_cache/3.12/starlette/routing.meta.json
+- .mypy_cache/3.12/starlette/status.data.json
+- .mypy_cache/3.12/starlette/status.meta.json
+- .mypy_cache/3.12/starlette/types.data.json
+- .mypy_cache/3.12/starlette/types.meta.json
+- .mypy_cache/3.12/starlette/websockets.data.json
+- .mypy_cache/3.12/starlette/websockets.meta.json
+- .mypy_cache/3.12/stat.data.json
+- .mypy_cache/3.12/stat.meta.json
+- .mypy_cache/3.12/string
+- .mypy_cache/3.12/string/__init__.data.json
+- .mypy_cache/3.12/string/__init__.meta.json
+- .mypy_cache/3.12/struct.data.json
+- .mypy_cache/3.12/struct.meta.json
+- .mypy_cache/3.12/subprocess.data.json
+- .mypy_cache/3.12/subprocess.meta.json
+- .mypy_cache/3.12/sys
+- .mypy_cache/3.12/sys/__init__.data.json
+- .mypy_cache/3.12/sys/__init__.meta.json
+- .mypy_cache/3.12/sys/_monitoring.data.json
+- .mypy_cache/3.12/sys/_monitoring.meta.json
+- .mypy_cache/3.12/tarfile.data.json
+- .mypy_cache/3.12/tarfile.meta.json
+- .mypy_cache/3.12/tempfile.data.json
+- .mypy_cache/3.12/tempfile.meta.json
+- .mypy_cache/3.12/textwrap.data.json
+- .mypy_cache/3.12/textwrap.meta.json
+- .mypy_cache/3.12/threading.data.json
+- .mypy_cache/3.12/threading.meta.json
+- .mypy_cache/3.12/time.data.json
+- .mypy_cache/3.12/time.meta.json
+- .mypy_cache/3.12/traceback.data.json
+- .mypy_cache/3.12/traceback.meta.json
+- .mypy_cache/3.12/types.data.json
+- .mypy_cache/3.12/types.meta.json
+- .mypy_cache/3.12/typing.data.json
+- .mypy_cache/3.12/typing.meta.json
+- .mypy_cache/3.12/typing_extensions.data.json
+- .mypy_cache/3.12/typing_extensions.meta.json
+- .mypy_cache/3.12/typing_inspection
+- .mypy_cache/3.12/typing_inspection/__init__.data.json
+- .mypy_cache/3.12/typing_inspection/__init__.meta.json
+- .mypy_cache/3.12/typing_inspection/introspection.data.json
+- .mypy_cache/3.12/typing_inspection/introspection.meta.json
+- .mypy_cache/3.12/typing_inspection/typing_objects.data.json
+- .mypy_cache/3.12/typing_inspection/typing_objects.meta.json
+- .mypy_cache/3.12/unicodedata.data.json
+- .mypy_cache/3.12/unicodedata.meta.json
+- .mypy_cache/3.12/urllib
+- .mypy_cache/3.12/urllib/__init__.data.json
+- .mypy_cache/3.12/urllib/__init__.meta.json
+- .mypy_cache/3.12/urllib/error.data.json
+- .mypy_cache/3.12/urllib/error.meta.json
+- .mypy_cache/3.12/urllib/parse.data.json
+- .mypy_cache/3.12/urllib/parse.meta.json
+- .mypy_cache/3.12/urllib/request.data.json
+- .mypy_cache/3.12/urllib/request.meta.json
+- .mypy_cache/3.12/urllib/response.data.json
+- .mypy_cache/3.12/urllib/response.meta.json
+- .mypy_cache/3.12/urllib3
+- .mypy_cache/3.12/urllib3/__init__.data.json
+- .mypy_cache/3.12/urllib3/__init__.meta.json
+- .mypy_cache/3.12/urllib3/_base_connection.data.json
+- .mypy_cache/3.12/urllib3/_base_connection.meta.json
+- .mypy_cache/3.12/urllib3/_collections.data.json
+- .mypy_cache/3.12/urllib3/_collections.meta.json
+- .mypy_cache/3.12/urllib3/_request_methods.data.json
+- .mypy_cache/3.12/urllib3/_request_methods.meta.json
+- .mypy_cache/3.12/urllib3/_version.data.json
+- .mypy_cache/3.12/urllib3/_version.meta.json
+- .mypy_cache/3.12/urllib3/connection.data.json
+- .mypy_cache/3.12/urllib3/connection.meta.json
+- .mypy_cache/3.12/urllib3/connectionpool.data.json
+- .mypy_cache/3.12/urllib3/connectionpool.meta.json
+- .mypy_cache/3.12/urllib3/exceptions.data.json
+- .mypy_cache/3.12/urllib3/exceptions.meta.json
+- .mypy_cache/3.12/urllib3/fields.data.json
+- .mypy_cache/3.12/urllib3/fields.meta.json
+- .mypy_cache/3.12/urllib3/filepost.data.json
+- .mypy_cache/3.12/urllib3/filepost.meta.json
+- .mypy_cache/3.12/urllib3/http2
+- .mypy_cache/3.12/urllib3/poolmanager.data.json
+- .mypy_cache/3.12/urllib3/poolmanager.meta.json
+- .mypy_cache/3.12/urllib3/response.data.json
+- .mypy_cache/3.12/urllib3/response.meta.json
+- .mypy_cache/3.12/urllib3/util
+- .mypy_cache/3.12/uuid.data.json
+- .mypy_cache/3.12/uuid.meta.json
+- .mypy_cache/3.12/warnings.data.json
+- .mypy_cache/3.12/warnings.meta.json
+- .mypy_cache/3.12/weakref.data.json
+- .mypy_cache/3.12/weakref.meta.json
+- .mypy_cache/3.12/zipfile
+- .mypy_cache/3.12/zipfile/__init__.data.json
+- .mypy_cache/3.12/zipfile/__init__.meta.json
+- .mypy_cache/3.12/zipfile/_path
+- .mypy_cache/3.12/zipimport.data.json
+- .mypy_cache/3.12/zipimport.meta.json
+- .mypy_cache/3.12/zlib.data.json
+- .mypy_cache/3.12/zlib.meta.json
+- .mypy_cache/3.12/zoneinfo
+- .mypy_cache/3.12/zoneinfo/__init__.data.json
+- .mypy_cache/3.12/zoneinfo/__init__.meta.json
+- .mypy_cache/3.12/zoneinfo/_common.data.json
+- .mypy_cache/3.12/zoneinfo/_common.meta.json
+- .mypy_cache/3.12/zoneinfo/_tzpath.data.json
+- .mypy_cache/3.12/zoneinfo/_tzpath.meta.json
+- .mypy_cache/3.12/zstandard
+- .mypy_cache/3.12/zstandard/__init__.data.json
+- .mypy_cache/3.12/zstandard/__init__.meta.json
+- .mypy_cache/CACHEDIR.TAG
+- .pytest_cache
+- .pytest_cache/.gitignore
+- .pytest_cache/CACHEDIR.TAG
+- .pytest_cache/README.md
+- .pytest_cache/v
+- .pytest_cache/v/cache
+- .pytest_cache/v/cache/lastfailed
+- .pytest_cache/v/cache/nodeids
+- .python-version
+- .ruff_cache
+- .ruff_cache/.gitignore
+- .ruff_cache/0.14.11
+- .ruff_cache/0.14.11/13227850353399419514
+- .ruff_cache/0.14.11/14512269679603769620
+- .ruff_cache/0.14.11/17380229639520669209
+- .ruff_cache/0.14.11/5120248003235728168
+- .ruff_cache/0.14.11/5308148292997736181
+- .ruff_cache/0.14.11/661654120648733806
+- .ruff_cache/0.14.11/6708936947943285549
+- .ruff_cache/CACHEDIR.TAG
+- README.md
+- app
+- app/__init__.py
+- app/__pycache__
+- app/__pycache__/__init__.cpython-312.pyc
+- app/__pycache__/main.cpython-312.pyc
+- app/admin_api
+- app/admin_api/__init__.py
+- app/admin_api/__pycache__
+- app/admin_api/__pycache__/__init__.cpython-312.pyc
+- app/admin_api/__pycache__/auth.cpython-312.pyc
+- app/admin_api/__pycache__/help_registry.cpython-312.pyc
+- app/admin_api/__pycache__/main.cpython-312.pyc
+- app/admin_api/__pycache__/schemas.cpython-312.pyc
+- app/admin_api/__pycache__/services.cpython-312.pyc
+- app/admin_api/auth.py
+- app/admin_api/help_registry.py
+- app/admin_api/main.py
+- app/admin_api/routes
+- app/admin_api/routes/__init__.py
+- app/admin_api/routes/__pycache__
+- app/admin_api/routes/help.py
+- app/admin_api/routes/runtime.py
+- app/admin_api/routes/settings.py
+- app/admin_api/schemas.py
+- app/admin_api/services.py
+- app/core
+- app/core/__init__.py
+- app/core/__pycache__
+- app/core/__pycache__/__init__.cpython-312.pyc
+- app/core/__pycache__/config.cpython-312.pyc
+- app/core/__pycache__/contracts.cpython-312.pyc
+- app/core/__pycache__/crypto.cpython-312.pyc
+- app/core/__pycache__/deployment.cpython-312.pyc
+- app/core/__pycache__/events.cpython-312.pyc
+- app/core/__pycache__/normalize.cpython-312.pyc
+- app/core/__pycache__/runtime_config.cpython-312.pyc
+- app/core/config.py
+- app/core/contracts.py
+- app/core/crypto.py
+- app/core/deployment.py
+- app/core/events.py
+- app/core/normalize.py
+- app/core/runtime_config.py
+- app/main.py
+- app/services
+- app/services/__init__.py
+- app/services/__pycache__
+- app/services/__pycache__/__init__.cpython-312.pyc
+- app/services/audit
+- app/services/audit/__pycache__
+- app/services/audit/repo.py
+- app/services/backup
+- app/services/backup/__init__.py
+- app/services/backup/__pycache__
+- app/services/backup/monitor_logic.py
+- app/services/backup/monitor_repo.py
+- app/services/decision
+- app/services/decision/__init__.py
+- app/services/decision/__pycache__
+- app/services/decision/engine.py
+- app/services/decision/lists_facade.py
+- app/services/decision/models.py
+- app/services/leads
+- app/services/leads/__init__.py
+- app/services/leads/__pycache__
+- app/services/leads/queue_repo.py
+- app/services/lists
+- app/services/lists/__init__.py
+- app/services/lists/__pycache__
+- app/services/lists/blacklist_store.py
+- app/services/lists/import_csv.py
+- app/services/lists/providers.py
+- app/services/lists/whitelist_store.py
+- app/services/notify
+- app/services/notify/__init__.py
+- app/services/notify/telegram.py
+- app/services/retention
+- app/services/retention/__init__.py
+- app/services/retention/__pycache__
+- app/services/retention/cleaners.py
+- app/services/retention/manager.py
+- app/services/retention/policy.py
+- app/services/settings
+- app/services/settings/__init__.py
+- app/services/settings/__pycache__
+- app/services/settings/defaults.py
+- app/services/settings/repo.py
+- app/services/storage
+- app/services/storage/__init__.py
+- app/services/storage/__pycache__
+- app/services/storage/ch_events.py
+- app/services/storage/pg_repo.py
+- app/tools
+- app/tools/__pycache__
+- app/tools/__pycache__/__init__.cpython-312.pyc
+- app/tools/__pycache__/backup_report.cpython-312.pyc
+- app/tools/__pycache__/leads_janitor.cpython-312.pyc
+- app/tools/__pycache__/retention_run.cpython-312.pyc
+- app/tools/__pycache__/settings_init.cpython-312.pyc
+- app/tools/backup_monitor.py
+- app/tools/backup_report.py
+- app/tools/leads_janitor.py
+- app/tools/retention_run.py
+- app/tools/settings_init.py
+- config
+- config/retention.json
+- config/runtime.json
+- data
+- data/raw
+- docs
+- docs/ARCHITECTURE.md
+- docs/CANONICAL_FIELDS.md
+- docs/INTERFACES.md
+- docs/RULES.md
+- docs/_CHECKPOINT_STATUS.txt
+- docs/_FILES_CURRENT.txt
+- docs/checkpoints
+- docs/checkpoints/CATALOG_STATUS.md
+- docs/checkpoints/CHECKPOINT_2026-01-09_0529.md
+- docs/checkpoints/CHECKPOINT_2026-01-09_0551.md
+- docs/checkpoints/CHECKPOINT_2026-01-09_0606.md
+- docs/checkpoints/CHECKPOINT_2026-01-09_0610.md
+- docs/checkpoints/INVENTORY.md
+- docs/interfaces
+- docs/interfaces/IFACE-LISTS-MATCH-001.md
+- infra
+- infra/clickhouse
+- infra/clickhouse/init
+- infra/clickhouse/init/001_schema.sql
+- infra/docker-compose.yml
+- infra/postgres
+- infra/postgres/init
+- infra/postgres/init/001_schema.sql
+- infra/postgres/init/002_leads.sql
+- infra/postgres/init/003_backup_monitor.sql
+- infra/postgres/init/004_tenant_settings.sql
+- infra/postgres/init/005_audit_events.sql
+- logs
+- pyproject.toml
+- pytest.ini
+- tests
+- tests/__pycache__
+- tests/__pycache__/test_admin_api_help_settings.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_backup_monitor_logic.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_decision_engine.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_leads_queue.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_lists.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_retention.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_runtime.cpython-312-pytest-9.0.2.pyc
+- tests/__pycache__/test_smoke.cpython-312-pytest-9.0.2.pyc
+- tests/test_admin_api_help_settings.py
+- tests/test_backup_monitor_logic.py
+- tests/test_decision_engine.py
+- tests/test_leads_queue.py
+- tests/test_lists.py
+- tests/test_retention.py
+- tests/test_runtime.py
+- tests/test_smoke.py
+- uv.lock
