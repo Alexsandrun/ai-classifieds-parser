@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: aicp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: aicp
+      POSTGRES_USER: aicp
+      POSTGRES_PASSWORD: aicp_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: aicp-clickhouse
+    restart: unless-stopped
+    environment:
+      CLICKHOUSE_DB: aicp
+      CLICKHOUSE_USER: aicp
+      CLICKHOUSE_PASSWORD: aicp_dev_password
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - chdata:/var/lib/clickhouse
+      - ./clickhouse/init:/docker-entrypoint-initdb.d:ro
+
+  # S3-compatible cold storage (raw html, full texts, archives)
+  minio:
+    image: minio/minio:latest
+    container_name: aicp-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio_dev_password
+    # Avoid port collision with ClickHouse (9000)
+    ports:
+      - "9002:9000"  # S3 API
+      - "9003:9001"  # Console UI
+    volumes:
+      - miniodata:/data
+
+  # Auto-create bucket for raw artifacts
+  minio_init:
+    image: minio/mc:latest
+    container_name: aicp-minio-init
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until mc alias set local http://minio:9000 minio minio_dev_password >/dev/null 2>&1; do sleep 1; done;
+      mc mb -p local/aicp-raw >/dev/null 2>&1 || true;
+      exit 0;
+      "
+
+volumes:
+  pgdata:
+  chdata:
+  miniodata:
