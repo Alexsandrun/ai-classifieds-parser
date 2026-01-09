@@ -35,4 +35,3 @@
 ## 6) Checkpoints
 - Every milestone: generate `docs/checkpoints/INVENTORY.md` and `CHECKPOINT_*.md`.
 - Commit checkpoints to git so the project can restart from zero.
-

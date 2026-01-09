@@ -1,28 +1,22 @@
 # Interface Documentation Template (v0.1)
 
-## Interface header
 - iface_id: <string>
 - iface_version: vX.Y.Z
 - producer: <module>
-- consumers: <module(s)>
+- consumers: <modules>
 - purpose: <one line>
 
-## Input payload (canonical fields)
-List required fields with types, plus optional fields.
+## Input payload
+List fields + types.
 
 ## Output payload
-Same.
+List fields + types.
 
-## Validation rules
-- Required fields presence
-- Types and ranges
-- Max string sizes
-- Allowed enums
+## Validation
+Required fields, type checks, max sizes, enums.
 
 ## Backward compatibility
-- If adding fields: always optional first
-- If removing/renaming: deprecate in 1 version, remove next major bump
+Add fields as optional first. Major bump for breaking changes.
 
-## Example packet
-Provide small JSON example (no huge text).
-
+## Example
+Small JSON example (no huge payloads).

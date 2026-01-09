@@ -5,43 +5,29 @@ If a field exists here, all modules MUST use this exact name and meaning.
 
 ## Identity / seller
 - tenant_id: string
-  - Example: "default"
-  - Notes: logical customer/instance identifier
 
 - seller_phone_e164: string
-  - Example: "+380501234567"
-  - Notes: MUST be normalized to E.164, digits only with leading +
+  Example: "+380501234567"
+  Notes: MUST be normalized to E.164
 
 - seller_phone_hash: string
-  - Example: "sha256(tenant_salt + seller_phone_e164)"
-  - Notes: stable per tenant, used for clustering and blacklist matching
+  Example: "sha256(tenant_salt + seller_phone_e164)"
 
 - seller_name: string
-  - Example: "Ivan"
-  - Notes: raw display name, sanitized
 
 - seller_cluster_id: string
-  - Example: "sc_9f1e..."; stable id from clustering
-  - Notes: see SoftSeller Cluster section
+  Notes: stable id from clustering (see SoftSeller Cluster)
 
 ## Listing / ad
 - listing_id: string
-  - Example: "avito:123456789" or "siteX:ABCDEF"
-  - Notes: prefer stable source-prefixed ids
+  Example: "avito:123456789"
 
 - source_id: string
-  - Example: "avito", "olx", "site_custom"
-  - Notes: plugin/source identifier
 
 - listing_url: string
-  - Notes: full URL, sanitized
 
-- published_at_utc: datetime (ISO 8601)
-  - Example: "2026-01-09T05:00:00Z"
-  - Notes: use UTC
-
-- fetched_at_utc: datetime (ISO 8601)
-  - Notes: when our system fetched/ingested it
+- published_at_utc: datetime (ISO 8601, UTC)
+- fetched_at_utc: datetime (ISO 8601, UTC)
 
 - title: string
 - description: string
@@ -51,14 +37,11 @@ If a field exists here, all modules MUST use this exact name and meaning.
 - images: list[string] | null
 
 ## Decision / scoring
-- decision: string
-  - Values: "ALLOW" | "REVIEW" | "BLOCK"
-
-- risk_score: float
-  - Range: 0.0 .. 1.0
+- decision: "ALLOW" | "REVIEW" | "BLOCK"
+- risk_score: float (0.0..1.0)
 
 - reasons: list[object]
-  - Each reason:
+  reason fields:
     - code: string
     - weight: float
     - evidence: object (small JSON)
@@ -68,8 +51,4 @@ If a field exists here, all modules MUST use this exact name and meaning.
 
 ## Storage / raw
 - raw_html_ref: string | null
-  - Notes: reference to short-lived raw page store (TTL days)
-
 - raw_html_ttl_days: int
-  - Notes: default 7..30, managed by retention service
-
