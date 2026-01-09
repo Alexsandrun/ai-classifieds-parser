@@ -15,3 +15,20 @@ ms-playwright/
 
 # Project data (local)
 data/
+
+# --- Local secrets / env (never commit) ---
+.env
+.env.*
+!.env.example
+config/*.local.*
+config/secrets*
+config/*secrets*
+config/runtime.local.json
+
+# --- Python / tooling ---
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
