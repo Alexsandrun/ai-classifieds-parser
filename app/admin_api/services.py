@@ -9,9 +9,9 @@
 from __future__ import annotations
 
 import json
-from typing import Any, Dict, Optional, Set
+from typing import Any, Optional, Set
 
-from app.admin_api.help_registry import HELP_REGISTRY
+from app.admin_api.help_registry import HELP_REGISTRY, FieldHelp
 from app.services.settings.defaults import DEFAULTS
 from app.services.settings.repo import SettingsRepo
 
@@ -30,7 +30,7 @@ def known_keys() -> Set[str]:
     return keys
 
 
-def get_field_help(key: str) -> Optional[dict]:
+def get_field_help(key: str) -> Optional[FieldHelp]:
     for page in HELP_REGISTRY.values():
         for f in page.get("fields", []) or []:
             if f.get("key") == key:

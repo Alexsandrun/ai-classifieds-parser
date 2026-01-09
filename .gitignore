@@ -32,3 +32,8 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
+
+# Local editor/terminal backups (never commit)
+*.bak
+*.bak.*
+*.bak2.*

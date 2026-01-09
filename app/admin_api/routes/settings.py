@@ -8,6 +8,9 @@
 
 from __future__ import annotations
 
+from fastapi import Depends
+
+
 from typing import Any, List
 
 from fastapi import APIRouter, HTTPException, Request
@@ -54,7 +57,7 @@ def update_setting(
     tenant_id: str,
     key: str,
     body: SettingUpdateIn,
-    actor: ActorContext = require_min_role("admin"),
+    actor: ActorContext = Depends(require_min_role("admin")),
 ) -> SettingItemOut:
     # allowlist key
     if key not in known_keys():

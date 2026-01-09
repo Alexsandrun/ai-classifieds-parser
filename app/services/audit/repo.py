@@ -4,10 +4,14 @@
 
 from __future__ import annotations
 
+
+
 import os
 from typing import Any, Dict, Optional
 
 import psycopg
+from psycopg.types.json import Jsonb
+
 
 
 class AuditRepo:
@@ -39,7 +43,7 @@ class AuditRepo:
                         "arole": (actor_role or "")[:50],
                         "ip": (ip or "")[:100],
                         "ua": (user_agent or "")[:500],
-                        "details": psycopg.types.json.Jsonb(details),
+                        "details": Jsonb(details),
                     },
                 )
             conn.commit()

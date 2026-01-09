@@ -172,7 +172,8 @@ class BackupMonitorRepo:
                     """,
                     {"tenant": tenant_id, "job": job_id},
                 )
-                last_success_at = cur.fetchone()[0]
+                row = cur.fetchone()
+                last_success_at = row[0] if row else None
 
                 # last run
                 cur.execute(
@@ -209,7 +210,8 @@ class BackupMonitorRepo:
                         """,
                         {"tenant": tenant_id, "job": job_id, "last_success": last_success_at},
                     )
-                consecutive_failures = int(cur.fetchone()[0])
+                row2 = cur.fetchone()
+                consecutive_failures = int(row2[0]) if row2 and row2[0] is not None else 0
 
         return BackupJobStats(
             last_success_at=last_success_at,

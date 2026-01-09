@@ -33,7 +33,7 @@ def test_enqueue_claim_ack_flow():
     lead_id = repo.enqueue(tenant_id="default", payload={"listing_uid": "manual:x1", "score": 0.1}, ttl_days=7)
     claim_token, leads = repo.claim_batch(tenant_id="default", limit=10)
 
-    assert any(l.lead_id == lead_id for l in leads)
+    assert any(lead.lead_id == lead_id for lead in leads)
 
     n = repo.ack_delivered(tenant_id="default", claim_token=claim_token, lead_ids=[lead_id])
     assert n == 1

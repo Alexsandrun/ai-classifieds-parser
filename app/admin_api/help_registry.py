@@ -4,7 +4,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional, TypedDict
+from typing import Dict, List, Literal, TypedDict
 
 
 Danger = Literal["safe", "warn", "critical"]

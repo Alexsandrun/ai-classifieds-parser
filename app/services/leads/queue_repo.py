@@ -124,7 +124,8 @@ class LeadsQueueRepo:
             """,
             {"t": tenant_id},
         )
-        pending = int(cur.fetchone()[0])
+        row = cur.fetchone()
+        pending = int(row[0]) if row and row[0] is not None else 0
 
         if pending < max_pending:
             return

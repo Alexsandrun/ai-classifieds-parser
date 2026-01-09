@@ -4,11 +4,15 @@
 
 from __future__ import annotations
 
+
+
 import os
 from dataclasses import dataclass
-from typing import Any, Dict, Optional
+from typing import Any, Optional
 
 import psycopg
+from psycopg.types.json import Jsonb
+
 
 
 @dataclass(frozen=True)
@@ -50,7 +54,7 @@ class SettingsRepo:
                       value = EXCLUDED.value,
                       updated_at_utc = NOW()
                     """,
-                    {"t": tenant_id, "k": key, "v": psycopg.types.json.Jsonb(value)},
+                    {"t": tenant_id, "k": key, "v": Jsonb(value)},
                 )
             conn.commit()
 
