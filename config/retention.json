@@ -1,0 +1,38 @@
+{
+  "disk": {
+    "path": ".",
+    "warn_free_percent": 20,
+    "critical_free_percent": 10
+  },
+  "targets": [
+    {
+      "id": "raw_html_local",
+      "kind": "localfs",
+      "priority": 20,
+      "path": "data/raw",
+      "default_retention_days": 14,
+      "emergency_retention_days": 3,
+      "min_retention_days": 1
+    },
+    {
+      "id": "ch_events",
+      "kind": "clickhouse",
+      "priority": 90,
+      "database": "aicp",
+      "table": "events",
+      "default_retention_months": 24,
+      "emergency_retention_months": 6,
+      "min_retention_months": 3
+    },
+    {
+      "id": "ch_snapshots",
+      "kind": "clickhouse",
+      "priority": 70,
+      "database": "aicp",
+      "table": "listing_snapshots",
+      "default_retention_months": 24,
+      "emergency_retention_months": 6,
+      "min_retention_months": 3
+    }
+  ]
+}
